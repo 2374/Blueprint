@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import org.usfirst.frc.team2374.robot.commands.TimedAuto;
 import org.usfirst.frc.team2374.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot {
@@ -20,6 +22,7 @@ public class Robot extends TimedRobot {
 		drivetrain = new Drivetrain();
 		oi = new OI();
 		SmartDashboard.putData("Auto mode", chooser);
+		chooser.addDefault("Default Auto", new TimedAuto(10));
 	}
 	
 	@Override
